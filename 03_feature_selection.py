@@ -302,9 +302,9 @@ def plot_feature_comparison(lasso_selected, sho_selected, all_features, save_dir
     for feat in all_features:
         data.append({
             'Feature': feat,
-            'LASSO': '✓' if feat in lasso_set else '✗',
-            'SHO':   '✓' if feat in sho_set else '✗',
-            'Both':  '✓' if feat in (lasso_set & sho_set) else '✗',
+            'LASSO': 'Yes' if feat in lasso_set else '-',
+            'SHO':   'Yes' if feat in sho_set else '-',
+            'Both':  'Yes' if feat in (lasso_set & sho_set) else '-',
         })
     
     comparison_df = pd.DataFrame(data)
