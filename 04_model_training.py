@@ -296,7 +296,7 @@ def train_ml_baselines(X_train, y_train, X_val, y_val):
     # Random Forest
     print("    Training Random Forest...")
     rf = RandomForestRegressor(
-        n_estimators=50, max_depth=5, min_samples_split=10,
+        n_estimators=200, max_depth=20, min_samples_split=5,
         random_state=42, n_jobs=-1
     )
     rf.fit(X_train, y_train)
@@ -309,7 +309,7 @@ def train_ml_baselines(X_train, y_train, X_val, y_val):
     # Gradient Boosting
     print("    Training Gradient Boosting...")
     gb = GradientBoostingRegressor(
-        n_estimators=50, max_depth=3, learning_rate=0.05,
+        n_estimators=200, max_depth=8, learning_rate=0.1,
         subsample=0.8, random_state=42
     )
     gb.fit(X_train, y_train)
